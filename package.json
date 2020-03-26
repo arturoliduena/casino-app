@@ -1,0 +1,25 @@
+{
+  "name": "casino-app",
+  "version": "1.0.0",
+  "description": "nodeJs API and react App",
+  "main": "index.js",
+  "scripts": {
+    "ui": "cd app && yarn start",
+    "server": "cd middleware-api && yarn start",
+    "start": "concurrently --kill-others-on-fail \"yarn server\" \"yarn ui\"",
+    "production": "concurrently --kill-others-on-fail \"cd middleware-api && yarn production\" \"cd app && yarn build\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arturoliduena/casino-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arturoliduena/casino-app/issues"
+  },
+  "homepage": "https://github.com/arturoliduena/casino-app#readme",
+  "dependencies": {
+    "concurrently": "^5.1.0"
+  }
+}
