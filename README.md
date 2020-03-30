@@ -31,7 +31,7 @@ $ yarn install
 ## Running the projects
 we can run each project by itself or both at the same time using concurrently.
 
-### Start the both project
+### Start both project
 To start the server and the app you need to call these commands
 ```sh
 $ cd casino-app

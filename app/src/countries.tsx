@@ -12,7 +12,7 @@ interface Props {
   getAllCountriesRequest: () => {};
 }
 
-const Main = (props: Props) => {
+const Countries = (props: Props) => {
   const [options, setOptions] = useState<Option[]>([]);
   useEffect(() => {
     props.getAllCountriesRequest();
@@ -35,4 +35,4 @@ const mapStateToProps = (state: any) => ({
   countries: state.data.countries,
   result_countries: state.data.result_countries,
 })
-export default connect(mapStateToProps, { getAllCountriesRequest })(Main)
+export default connect(mapStateToProps, { getAllCountriesRequest })(Countries)

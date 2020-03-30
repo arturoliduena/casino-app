@@ -1,16 +1,33 @@
-import React from 'react';
-import Main from './main';
+import React, { useState } from 'react';
+import Countries from './countries';
+import Machine from './slotMachine'
 import './App.css';
 
 function App() {
+  const [ tabActive, setTabActive ] = useState(1)
+  const color = '#ccc';
+  const handleOnClick = (tabNumber: number) => {
+    setTabActive(tabNumber);
+  };
   return (
     <div className="App">
       <header className="App-header">
+        <div className="tab">
+          <button className="tablinks" onClick={() => handleOnClick(1)} style={{backgroundColor: tabActive == 1 ? color : ''}}>Countries</button>
+          <button className="tablinks" onClick={() => handleOnClick(2)} style={{backgroundColor: tabActive == 2 ? color : ''}}>Slot Machine</button>
+        </div>
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+          Arturo Liduena.
         </p>
+
       </header>
-      <Main />
+      {
+        tabActive === 1 && <Countries />
+      }
+       {
+        tabActive === 2 && <Machine />
+      }
+      
       <footer>
         <a
           className="App-link"
